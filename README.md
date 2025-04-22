@@ -4,7 +4,7 @@ Vladimir Alexandre Pakhomov
 
 Concept and Implementation: 2025
 
-**Pakhomov GSC** (Guaranteed Seed Compression) is an experimental file compression concept based on deterministic pseudo-random generation.
+**Pakhomov GSC** (Generative Seed Compression) is an experimental file compression concept based on deterministic pseudo-random generation.
 
 The idea is simple: for any file, there exists a seed and a length such that a deterministic pseudo-random number generator (PRNG) will generate the exact bit sequence of the original file. If such a seed and length are found, the file can be represented by just those two numbers.
 
