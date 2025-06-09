@@ -131,8 +131,9 @@ void compress(const string& input_file, const string& output_file) {
     }
 
     if (found) {
-        ofstream out(output_file);
-        out << found_seed << "," << bit_count;
+        std::ofstream out(output_file, std::ios::binary);
+        out.write(reinterpret_cast<const char*>(&found_seed), sizeof(found_seed));
+        out.write(reinterpret_cast<const char*>(&bit_count), sizeof(bit_count));
         out.close();
         cout << "Seed found: " << found_seed << endl;
         cout << "Saved to: " << output_file << endl;
